@@ -1,0 +1,409 @@
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+:root {
+    --primary: #1f011d;
+    --secondary: #e8c70d;
+    --third: rgba(255, 200, 0, 0.916);
+    --text-white: #fff;
+    --text-secondary: #c0c0c0;
+  }
+.container{
+   
+}
+.navbar{
+   
+    padding: 10px 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff; /* Optional: Add a background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  
+}
+.navbar img{
+    width: 150px;
+    
+
+}
+ul {
+    float: right;
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+
+ul li {
+    position: relative;  
+}
+
+ul li a {
+    padding: 15px;
+    font-size: 15px;  
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+
+
+ul li.active::after {
+    content: "";
+    width: 60%;  
+    height: 3px;  
+    background-color: var(--secondary);  
+    position: absolute;
+    bottom: -4px;  
+    left: 20%;  
+    transition: width 0.3s ease;
+}
+
+ul li a:hover {
+  
+   
+}
+
+.image img{
+  width: 100%;
+  
+
+}
+.image{
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    
+   
+} 
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;  
+    overflow: hidden; 
+  }
+  
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;  
+  }
+  
+  .text-over-image {
+    position: absolute;
+    top: 50%;  
+    left: 50%;  
+    transform: translate(-50%, -50%);  
+    color: var(--text-white); 
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.356);  
+    padding: 10px;
+    border-radius: 5px;  
+    text-align: center;  
+   
+  
+   
+    transition: transform 0.3s ease, text-shadow 0.3s ease;  
+  
+  }
+  .text-over-image:hover {
+    transform: translate(-50%, -50%) scale(1.1);  
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);  
+  }
+  
+
+  /* Mobile version for Home page */
+
+  
+
+  /* ABOUT STYLE */
+
+  /* .header h4{
+    background: var(--primary);
+    color: var(--text-white);
+    text-align: center;
+    padding: 20px;
+  } */
+ /* Ensure that the header is centered properly */
+.about-us .header {
+  text-align: center;
+  background: var(--primary);
+  padding: 15px;
+  margin-bottom: 20px; 
+}
+
+.about-us .header h4 {
+  position: relative;
+  display: inline-block;  
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-white);  
+  border-radius: 5px;     
+}
+
+.about-us .header h4::after {
+  content: "";
+  position: absolute;
+  width: 50%; 
+  height: 3px; 
+  background-color: var(--secondary);  /* Color of the underline */
+  left: 50%; /* Center align the underline */
+  transform: translateX(-50%); /* Center the underline */
+  bottom: -8px; /* Position the underline just below the text */
+}
+.about-us .about-content {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sides */
+  align-items: center; /* Vertically align the images and text */
+  padding: 20px;
+  position: relative; /* For positioning the vertical line */
+}
+
+/* Left-side (images) */
+.about-us .left-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: auto auto; /* Adjust row height automatically */
+  gap: 10px; /* Space between the images */
+  flex: 1;
+}
+
+.about-us .left-side img {
+  width: 250px;
+  height: auto;
+  object-fit: cover; 
+  padding: 20px;
+}
+
+/* Make the last image bigger */
+.about-us .left-side img:last-child {
+  grid-column: span 2; /* Make the last image span both columns */
+  width: 100%;
+  height: 300px; /* Larger height for the last image */
+}
+
+/* Right-side (paragraph) */
+.about-us .right-side {
+  flex: 2; /* Right side takes more space */
+  padding-left: 140px; /* Space between the paragraph and the vertical line */
+  position: relative;
+}
+
+.about-us .right-side p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--primary);
+  
+}
+
+/* Vertical divider line */
+.about-us .about-content::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 20px); /* Adjusted to keep the line away from the paragraph */
+  top: 0;
+  bottom: 0;
+  width: 5px; /* Thickness of the line */
+  background-color: var(--primary); /* Color of the line */
+  
+}
+
+
+
+
+
+.services-page {
+  text-align: center;
+  padding: 20px;
+  max-width: 100%;
+  margin: 50px auto;
+}
+
+.header-services {
+  text-align: center;
+  background: var(--primary);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.header-services h4 {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-white);
+  border-radius: 5px;
+}
+
+.header-services h4::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: var(--secondary);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+}
+/* Scroll container and buttons */
+.scroll-container-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Adjust this value if you want to limit the container width */
+  max-width: 900px; /* Optional: max-width to keep the div within a certain width */
+  overflow: hidden; /* Hide overflowing items */
+  margin: 20px auto; /* Center the container horizontally */
+  background: var(--primary);
+  padding: 20px; /* Add some padding if desired */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for visual effect */
+}
+
+
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 10px;
+  
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.service-item {
+  min-width: 850px; /* Width of each item (small box) */
+  max-width: 850px;
+  height: 350px; /* Height of each item */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background: var(--text-white);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a box effect */
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the image and text horizontally */
+  text-align: center; /* Ensure the paragraph text is centered too */
+  padding: 10px;
+}
+
+.service-item img {
+  max-width: 50%;
+  height: 200px; /* Set a fixed height for the image */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.scroll-btn {
+  background-color: orangered;
+  border: none;
+  color: var(--text-white);
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .service-item {
+    min-width: 90%; /* Adjust width on small screens */
+    max-width: 90%;
+  }
+}
+
+
+.service-item {
+  min-width: 250px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-container {
+      gap: 10px;
+  }
+
+  .service-item {
+      min-width: 180px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .about-us .about-content {
+    flex-direction: column;
+  }
+
+  .about-us .right-side {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .about-us .left-side {
+    grid-template-columns: 1fr; /* Make the images stack vertically on small screens */
+  }
+
+  .about-us .about-content::before {
+    display: none; /* Hide the vertical line on small screens */
+  }
+}
