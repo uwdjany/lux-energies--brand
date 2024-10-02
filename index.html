@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./css/index.css">
     <title>luxenergy</title>
 </head>
 <body>
     <div class="container">
-       <div class="navbar">
+       <div class="navbar" id="navbar">
         <img src="./image/luxEnergies.png" alt="">
 
         <ul>
@@ -22,6 +23,9 @@
                 <a href="#service">our services</a>
             </li>
             <li>
+                <a href="#team">our team</a>
+            </li>
+            <li>
                 <a href="#contact">contact</a>
             </li>
         </ul>
@@ -30,11 +34,19 @@
 
        <div class="home-content" id="home">
         <div class="image-container">
-            <img src="image/getty_96160574_giutsg.jpg" alt="">
-            <p class="text-over-image">Our team is dedicated to providing fast, friendly, and reliable service   
-                every time you visit.</p>
-          </div>
+            <div class="text-container">
+                <h3>Sustainability & Reliability</h3>
+                <p class="text-over-image">Our team is dedicated to providing fast, friendly, and reliable service every time you visit.
+                    Lorem ipsum dolor sit amet consectetur ad quae debitis consequuntur, voluptatibus est, repellendus, qui dolorum aliquid repellat itaqu
+                </p>
+                <button class="contact-button">Contact Us</button> <!-- Move button here -->
+            </div>
+            <img src="image/gaz.png" alt="Background Image" class="right-image">
         </div>
+    </div>
+    
+    </div>
+    
         <div class="about-us" id="about">
             <div class="header">
                 <h4>ABOUT US</h4>
@@ -43,9 +55,8 @@
                 <div class="left-side">
                     
                     
-                    <img src="image/images (6).jpg" alt="">
-                    <img src="image/Soko-Fuel-Shortage.jpg" alt="">
-                    <img src="image/images (4).jpg" alt="">
+                    <img src="image/about-us.png" alt="">
+                   
                 </div>
                 <div class="right-side">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt praesentium reprehenderit optio, commodi nobis harum eveniet hic eum quod
@@ -59,6 +70,19 @@
                 </div>
             </div>
         </div>
+        <!-- Mission and Vision Section -->
+<div class="mission-vision-container" id="mission-vision">
+    <section class="mission-section">
+        <h4>Our Mission</h4>
+        <p>At LuxEnergy, our mission is to provide sustainable energy solutions that empower businesses and communities while preserving the planet for future generations. We strive for excellence in every aspect of our service, ensuring reliability, efficiency, and innovation at every step of the way.</p>
+    </section>
+    
+    <section class="vision-section">
+        <h4>Our Vision</h4>
+        <p>We envision a world where renewable energy powers the future, transforming industries and enhancing the quality of life for people across the globe. Our vision is to be the leading force in energy innovation, inspiring positive environmental and economic change through our sustainable energy solutions.</p>
+    </section>
+</div>
+
         <div class="header-srvices" id="service">
             <div class="services-page">
                 <div class="header-services">
@@ -73,12 +97,12 @@
                                 voluptatum quia perspiciatis quibusdam cupiditate culpa eius, reiciendis, nobis in?</p>
                         </div>
                         <div class="service-item">
-                            <img src="image/images (5).jpg" alt="Service 2">
+                            <img src="image/BG2.jpg" alt="Service 2">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tempore assumenda unde incidunt quo, maxime ipsum earum eveniet eligendi 
                                 excepturi ipsam deserunt et corporis a. Cumque, voluptatum. Libero, ratione eaque.</p>
                         </div>
                         <div class="service-item">
-                            <img src="image/images (6).jpg" alt="Service 3">
+                            <img src="image/6kg-gas-cylinder.jpg" alt="Service 3">
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, quidem! Fugiat, fugit consequuntur aspernatur repudiandae voluptates minus aliquam accusantium unde. S
                                 uscipit dolorem doloremque repudiandae iure consequatur! Fuga natus odit facilis?</p>
                         </div>
@@ -88,7 +112,121 @@
                 </div>
             </div>
         </div>
+        <div class="team-section" id="team">
+            <div class="team-header">
+                <h4>Our Team</h4>
+            </div>
+            <div class="team-content">
+                <div class="team-member">
+                    <img src="image/ngabo.jpg" alt="Team Member 1">
+                    <h5>John Doe</h5>
+                    <p>CEO & Founder</p>
+                    <p>John has over 20 years of experience in the energy sector and is passionate about renewable energy solutions.</p>
+                </div>
+                <div class="team-member">
+                    <img src="image/ngabo.jpg" alt="Team Member 2">
+                    <h5>Jane Smith</h5>
+                    <p>Chief Operating Officer</p>
+                    <p>Jane leads the operations team and ensures that we deliver reliable service to all our customers.</p>
+                </div>
+                <div class="team-member">
+                    <img src="image/ngabo.jpg" alt="Team Member 3">
+                    <h5>Mike Brown</h5>
+                    <p>Technical Lead</p>
+                    <p>Mike is responsible for overseeing technical developments and innovations at LuxEnergy.</p>
+                </div>
+                <div class="team-member">
+                    <img src="image/ngabo.jpg" alt="Team Member 3">
+                    <h5>Mike Brown</h5>
+                    <p>Technical Lead</p>
+                    <p>Mike is responsible for overseeing technical developments and innovations at LuxEnergy.</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </div>
+        <div class="contact-form-container" id="contact">
+            <div class="contact-header">
+              <h4>Contact Us</h4>
+            </div>
+            <form class="contact-form" action="#" method="post">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+          
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#team">our team</a></li>
+                        <li><a href="#contact">Contact us</a></li>
+                        <li><a href="#contact"></a></li>
+                      
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>Email: info@luxenergy.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 1234 Energy St, City, Country</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                            <img src="image/download (1).png" alt="Facebook">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                            <img src="image/download.png" alt="Twitter">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                            <img src="image/download (4).jpg" alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                            <img src="image/download (1).png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LuxEnergy. All rights reserved.</p>
+            </div>
+        </footer>
+        
+        <div>
+            <script>
+                window.onscroll = function() {
+                    const navbar = document.getElementById("navbar");
+                    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                };
+            </script>
+            
         <script src="js/scroll.js"></script>
+        
         
 </body>
 </html>
