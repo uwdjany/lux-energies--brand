@@ -20,39 +20,6 @@
   body, html {
     min-height: 100vh; /* 100% of the viewport height */
 }
-  /* .home-content {
-  
-    min-height: 100vh;
-    
-} */
-.home-content {
-  display: flex;
-  align-items: center; /* Center the items vertically */
-  padding: 20px; /* Add some padding */
-}
-
-.image-container {
-  display: flex;
-  justify-content: space-between; /* Space out text and image */
-  width: 100%; /* Full width */
-}
-
-.text-container {
-  flex: 1; /* Allow text to take available space */
-  padding-right: 20px; /* Add space between text and image */
-}
-
-.right-image {
-  max-width: 50%; /* Adjust as necessary */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: for rounded corners */
-}
-
-
-
-.container{
-   
-}
 .navbar {
   padding: 10px 80px;
   position: fixed;
@@ -65,13 +32,12 @@
 }
 
 .navbar.scrolled {
-  background-color: rgba(255, 255, 0, 0.5); /* 50% transparent */
-
-
-
-
+  background-color:var(--primary); /* 50% transparent */
 
   padding: 5px 80px; /* Optional: change padding on scroll */
+}
+.navbar.scrolled ul li a{
+  color: #ccc;
 }
 .navbar img{
     width: 150px;
@@ -97,9 +63,6 @@ ul li a {
     color: var(--primary);
     transition: color 0.3s ease;
 }
-
-
-
 ul li.active::after {
     content: "";
     width: 60%;  
@@ -111,84 +74,145 @@ ul li.active::after {
     transition: width 0.3s ease;
 }
 
-ul li a:hover {
-  
-   
+
+/* Hamburger and Close Icon Styling */
+.hamburger, .close-icon {
+  display: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: var(--primary);
+  float: right;
 }
 
-.image img{
-  width: 100%;
-  
-
-}
-.image{
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    
-   
-} 
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 400px;  
-    overflow: hidden; 
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+  /* Adjust the padding of the navbar on smaller screens */
+  .navbar {
+    padding: 10px 20px;
   }
-  
-  .image-container img {
+
+  /* Display hamburger menu and hide regular nav items */
+  .hamburger {
     display: block;
+  }
+
+  ul {
+    display: none;
+    flex-direction: column;
     width: 100%;
-    height: auto;  
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--primary);
+    padding: 10px 0;
+  }
+
+  ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  ul li a {
+    display: block;
+    padding: 15px 0;
+    color: white;
+  }
+
+  /* Show the menu when open */
+  .menu-open ul {
+    display: flex;
+  }
+
+  /* Show close icon when menu is open */
+  .menu-open .hamburger {
+    display: none;
+  }
+
+  .menu-open .close-icon {
+    display: block;
   }
   
-
-  .home-content {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center items horizontally */
-    padding: 20px; /* Add some padding */
-    height: 100vh; /* Full height to center content vertically */
-    justify-content: center; /* Center items vertically */
 }
 
+@media (max-width: 480px) {
+  /* Adjust font sizes and paddings for even smaller screens */
+  ul li a {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  
+  .navbar img {
+    width: 120px;
+  }
+
+  .hamburger, .close-icon {
+    font-size: 25px;
+  }
+}
+/* General Styling */
+.image img {
+  width: 100%;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Home Content Container */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  justify-content: center;
+}
+
+/* Image Container Styling */
 .image-container {
-    display: flex;
-    justify-content: space-between; /* Space out text and image */
-    width: 100%; /* Full width */
-    position: relative; /* Position relative for cloud background */
-    padding: 20px; /* Optional: space around the content */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding: 20px;
 }
 
 .text-container {
-    flex: 1; /* Allow text to take available space */
-    padding-right: 20px; /* Add space between text and image */
-    position: relative; /* Ensure text is above the background */
-    z-index: 2; /* Ensure text is above the background */
+  flex: 1;
+  padding-right: 20px;
+  position: relative;
+  z-index: 2;
+
 }
 
 .right-image {
-    max-width: 70%; /* Adjust as necessary */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: for rounded corners */
-    z-index: 2; /* Ensure image is above the background */
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+  z-index: 2;
 }
 
-/* Contact Button Styling */
+/* Text and Button Styling */
 .text-container h3 {
-  font-size: 36px; /* Adjust the size as needed */
-  margin-bottom: 20px; /* Adds space between the h3 and p */
-  color: #333; /* Adjust color if needed */
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .text-container p {
-  font-size: 18px; /* Adjust the size of the paragraph text */
-  line-height: 1.6; /* Adjust the line height for better readability */
-  margin-bottom: 30px; /* Adds space between the p and the button */
-}
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
 
+}
+.text-container {
+  margin-top: 80px;
+}
 .contact-button {
   padding: 10px 20px;
-  background-color: orangered; /* Adjust the button color */
+  background-color: orangered;
   border: none;
   color: #fff;
   font-size: 16px;
@@ -196,79 +220,95 @@ ul li a:hover {
   cursor: pointer;
 }
 
-
 .contact-button:hover {
-    background-color: #d9534f; /* Darker shade on hover */
+  background-color: #d9534f;
 }
 
-.image-container {
-  display: flex; /* Enable flexbox */
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Distribute space between items */
-  padding: 20px; /* Optional: add some padding */
-}
-
+/* Text Over Image */
 .text-over-image {
-  flex: 1; /* Allow text container to take up space */
-  display: flex; /* Enable flexbox for text container */
-  align-items: center; /* Center text vertically */
-  justify-content: center; /* Center text horizontally */
-  text-align: left; /* Align text to the left */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
 }
 
 .text-over-image p {
-  margin: 0; /* Remove default margin */
-  font-size: 1.2em; /* Optional: adjust font size */
-
+  margin: 0;
+  font-size: 1.2em;
 }
 
+/* Right Image */
 .right-image {
-  max-width: 500px; /* Set a max width for the image */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 500px;
+  height: auto;
 }
-
-
-
-
-  /* .text-over-image {
-    position: absolute;
-    top: 50%;  
-    left: 50%;  
-    transform: translate(-50%, -50%);  
-    color: var(--text-white); 
-    font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.356);  
-    padding: 10px;
-    border-radius: 5px;  
-    text-align: center;  
-   
-  
-   
-    transition: transform 0.3s ease, text-shadow 0.3s ease;  
-  
-  }
-  .text-over-image:hover {
-    transform: translate(-50%, -50%) scale(1.1);  
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);  
-  }
-   */
-
-  /* Mobile version for Home page */
-
-  
-
-  /* ABOUT STYLE */
-
-  /* .header h4{
-    background: var(--primary);
-    color: var(--text-white);
+@media (max-width: 1024px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 20px;
-  } */
- /* Ensure that the header is centered properly */
+  }
+
+  .right-image {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .text-container {
+    padding-right: 0;
+  }
+
+  .text-container h3 {
+    font-size: 32px;
+  }
+
+  .text-container p {
+    font-size: 16px;
+  }
+}
+/* For phones (screens smaller than 768px) */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 20px 10px;
+    height: 70vh;
+
+    
+    
+  }
+
+  .image-container {
+    flex-direction: column;
+ 
+  }
+  .text-container {
+    padding: 0; /* Remove padding */
+  }
+
+  .text-container h3 {
+    font-size: 28px;
+  }
+
+  .text-container p {
+    font-size: 16px;
+  }
+
+  .contact-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .right-image {
+    display: none; 
+  }
+}
+@media (max-width: 480px) {
+  .text-container h3 {
+    font-size: 24px;
+  }
+}
 .about-us .header {
   text-align: center;
- 
   padding: 15px;
   margin-bottom: 20px; 
 }
@@ -302,21 +342,12 @@ ul li a:hover {
 }
 
 /* Left-side (images) */
-.about-us .left-side {
-
-
-
-}
-
 .about-us .left-side img {
   width: 500px;
   height: auto;
   object-fit: cover; 
   padding: 20px;
 }
-
-
-
 /* Right-side (paragraph) */
 .about-us .right-side {
   flex: 2; /* Right side takes more space */
@@ -409,9 +440,6 @@ ul li a:hover {
   }
 }
 
-
-
-
 .services-page {
   text-align: center;
   padding: 20px;
@@ -425,7 +453,6 @@ ul li a:hover {
   padding: 15px;
   margin-bottom: 20px;
 }
-
 .header-services h4 {
   position: relative;
   display: inline-block;
@@ -459,8 +486,6 @@ ul li a:hover {
   padding: 20px; /* Add some padding if desired */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for visual effect */
 }
-
-
 .scroll-container {
   display: flex;
   gap: 20px;
@@ -470,11 +495,9 @@ ul li a:hover {
   padding: 10px;
   
 }
-
 .scroll-container::-webkit-scrollbar {
   display: none; /* Hide scrollbar */
 }
-
 .service-item {
   min-width: 850px; /* Width of each item (small box) */
   max-width: 850px;
@@ -488,7 +511,6 @@ ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a box effect */
 }
-
 .service-item {
   display: flex;
   flex-direction: column;
@@ -496,7 +518,6 @@ ul li a:hover {
   text-align: center; /* Ensure the paragraph text is centered too */
   padding: 10px;
 }
-
 .service-item img {
   max-width: 50%;
   height: 200px; /* Set a fixed height for the image */
@@ -518,15 +539,12 @@ ul li a:hover {
   z-index: 10;
   border-radius: 50%;
 }
-
 .scroll-btn.left {
   left: 0;
 }
-
 .scroll-btn.right {
   right: 0;
 }
-
 /* Responsive adjustments for small screens */
 @media (max-width: 768px) {
   .service-item {
@@ -534,93 +552,107 @@ ul li a:hover {
     max-width: 90%;
   }
 }
-
-
 .service-item {
   min-width: 250px;
   flex: 0 0 auto;
   text-align: center;
 }
-
 .service-item img {
   width: 100%;
   height: auto;
   border-radius: 5px;
 }
-
 .service-item p {
   font-size: 16px;
   color: #333;
   margin-top: 10px;
   padding: 10px;
 }
-
-/* our team page */
 .team-section {
-  padding: 40px 80px;
-  background-color: #f7f7f7; /* Light background */
+  padding: 50px 20px;
   text-align: center;
+  background-color: #f4f4f4;
 }
 
 .team-header h4 {
-  position: relative; /* To ensure the pseudo-element is positioned relative to the h4 */
-  font-size: 2rem; /* Adjust as needed */
-  color: #333; /* Adjust as needed */
-  text-align: center; /* Centers the text */
+  font-size: 30px;
+  color: var(--primary);
+  margin-bottom: 40px;
+  position: relative;
 }
 
-.team-header h4::after{
+.team-header h4::after {
   content: "";
   position: absolute;
-  width: 9%; /* Adjust the width of the underline */
-  height: 3px; /* Adjust the thickness of the underline */
-  background-color: orangered; /* Adjust the color of the underline */
+  width: 60px;
+  height: 3px;
+  background-color: orangered;
   left: 50%;
-  transform: translateX(-50%); /* Centers the underline */
-  bottom: -5px; /* Adjust the space between the text and the underline */
+  transform: translateX(-50%);
+  bottom: -10px;
 }
 .team-content {
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
-
-.team-member {
-  max-width: 250px;
-  background: beige;
-  border-radius: 10px;
-  box-shadow: 10 12px 15px 19px rgba(0, 0, 0, 0.1);
+.team-member.featured {
+  margin-bottom: 40px;
+  background-color: #ffe4e1;
   padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between team members */
+}
+.team-member {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 40px;
-  /* border: 2px solid orangered; */
-  transition: all 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+  transform: translateY(0); /* Set initial position */
 }
-
-.team-member:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-  border-color: darkorange; /* Change border color on hover */
-  transform: translateY(-10px); /* Move the card slightly up */
-}
-
-
 .team-member img {
-  width: 100%;
-  border-radius: 45%;
-  height: 150px;
-  object-fit: cover;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
 }
 
 .team-member h5 {
-  margin-top: 15px;
-  font-size: 1.2rem;
+  font-size: 22px;
   color: #333;
+  margin-bottom: 10px;
 }
 
 .team-member p {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 16px;
+  color: #666;
+}
+/* Hover effect on team card */
+.team-member:hover {
+  transform: translateY(-10px) scale(1.05); /* Moves up slightly and scales up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .team-row {
+      flex-direction: column;
+  }
+
+  .team-member {
+      width: 100%;
+  }
 }
 
 
@@ -715,11 +747,6 @@ ul li a:hover {
   margin: 0 15px;
   transition: transform 0.3s ease;
 }
-
-
-
-
-
 
 
 /* Footer */
@@ -817,12 +844,6 @@ ul li a:hover {
       margin: 20px 0;
   }
 }
-
-
-
-
-
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .scroll-container {
@@ -833,18 +854,6 @@ ul li a:hover {
       min-width: 180px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsive for small screens */
 @media (max-width: 768px) {
