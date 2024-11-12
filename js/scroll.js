@@ -52,3 +52,30 @@ let teamAutoScrollInterval = setInterval(function() {
 }, 3000);
 
 
+// navbar script
+
+
+  const hamburger = document.getElementById('hamburger');
+  const closeIcon = document.getElementById('close-icon');
+  const navbar = document.getElementById('navbar');
+
+  hamburger.addEventListener('click', function() {
+    navbar.classList.add('menu-open'); // Opens the menu
+  });
+
+  closeIcon.addEventListener('click', function() {
+    navbar.classList.remove('menu-open'); // Closes the menu
+  });
+
+  // Change navbar background on scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+
+
